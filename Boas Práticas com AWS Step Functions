@@ -1,0 +1,23 @@
+# Boas Práticas com AWS Step Functions
+
+1. **Escolha o tipo certo de workflow**  
+   - Use *Standard* para execuções longas e *Express* para eventos rápidos.
+
+2. **Evite tarefas muito pesadas**  
+   - Delegue processamento para Lambda, ECS ou Batch.  
+   - Step Functions deve apenas orquestrar, não processar.
+
+3. **Monitore custos**  
+   - Cada estado conta como uma transição → otimize o design.  
+   - Combine tarefas quando possível.
+
+4. **Use Retry e Catch**  
+   - Implemente mecanismos de tratamento de erros para evitar falhas inesperadas.  
+
+   Exemplo:
+   ```json
+   "Retry": [{
+     "ErrorEquals": ["States.ALL"],
+     "IntervalSeconds": 5,
+     "MaxAttempts": 3
+   }]
