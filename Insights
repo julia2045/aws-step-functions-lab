@@ -1,0 +1,21 @@
+
+# Insights do Laboratório AWS Step Functions
+
+1. **Visualização é um ponto forte**  
+   - A interface gráfica ajuda muito no entendimento dos fluxos.    
+
+2. **Integração sem código extenso**  
+   - Reduz complexidade de scripts → foco na lógica do negócio.  
+
+3. **Logs ajudam a aprender**  
+   - Erros comuns apareceram no CloudWatch, mostrando onde ajustar.
+
+4. **Escalabilidade impressiona**  
+   - Mesmo cenários simples já mostram o poder de automatização.
+
+5. **Aplicação prática**  
+   - Esse aprendizado pode ser usado em:  
+     - Processos de ETL  
+     - Automação de uploads  
+     - Orquestração de microserviços  
+     - Sistemas de notificação  
