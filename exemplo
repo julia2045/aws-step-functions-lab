@@ -1,0 +1,30 @@
+{
+  "Comment": "Workflow completo de exemplo",
+  "StartAt": "ValidarEntrada",
+  "States": {
+    "ValidarEntrada": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.valido",
+          "BooleanEquals": true,
+          "Next": "ProcessarTarefa"
+        }
+      ],
+      "Default": "EntradaInvalida"
+    },
+    "EntradaInvalida": {
+      "Type": "Fail",
+      "Error": "EntradaInvalida",
+      "Cause": "Os dados de entrada não são válidos"
+    },
+    "ProcessarTarefa": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:REGION:ACCOUNT:function:ProcessarLambda",
+      "Next": "Finalizar"
+    },
+    "Finalizar": {
+      "Type": "Succeed"
+    }
+  }
+}
